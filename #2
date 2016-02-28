@@ -1,0 +1,18 @@
+#include <iostream.h>
+#include <conio.h>
+#include <math.h>
+
+void main() {
+  clrscr();      
+  char name[33];
+  cout << "Enter your 1st friend's name: "; // Either this or getline (cin, name)
+  cin.getline( 32, name );   
+  cout << "Hello " << name;
+  cout << "Enter your 2nd friend's name: ";
+  cin.getline( 32, name );   
+  cout << "Hello " << name;
+  cout << "Enter your 3rd friend's name: ";
+  cin.getline( 32, name );   
+  cout << "Hello " << name;
+  getch();
+}
