@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class calc {
+    float r, area, circf;
+    float pi = 3.14;
+public:
+    void accept() {
+        cout << "Enter the radius = ";
+        cin >> r;
+    }
+    void display() {
+        area = pi * r * r;
+        circf = 2 * pi * r;
+        cout << "The area of the circle is = " << area << " sqr. cm " << endl;
+        cout << "The circumfrence of the circle is = " << circf << " cm " << endl;
+    }
+};
+
+int main() {
+    calc c;
+    c.accept();
+    c.display();
+    return 0;
+}
