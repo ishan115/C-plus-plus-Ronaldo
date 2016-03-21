@@ -1,0 +1,59 @@
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+class book {
+public:
+    
+    void accept_write() {
+        ofstream out ("Book.txt" , ios::app);
+        char line [255];
+        cout << "Enter (END) to stop typing" << endl;
+        while(1) {
+            cin.getline(line, 255);
+            if ( strcmp(line, "(END)") == 0 ) {
+                break;
+            }
+            out << line << endl;
+        }
+    }
+     
+
+    void read_show() {
+        ifstream in("Book.txt");
+        char line[255];
+        
+        cout << "The File contains: " << endl;
+        while ( !in.eof()) {
+            in.getline(line, 255);
+            cout << line << endl;
+        }
+    }
+ 
+    void choice() {
+        int ch;
+        do{
+        cout << "Main Menu" << endl;
+        cout << "Enter (END) to stop typing at anytime" << endl;
+        cout << "1. Insert" << endl;
+        cout << "2. Display" << endl;
+        cout << "3. Exit" << endl;
+            cin >> ch;
+
+
+        if(ch == 1) accept_write();
+        if(ch == 2) read_show();
+        
+        }while (ch != 3);
+    }
+};
+
+int main() {
+    book b;
+    b.choice();
+    cin.get();
+    return 0;
+}
