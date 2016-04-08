@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Num {
+    int x;
+public:
+    void accept() {
+        cout << "Enter the value of x";
+        cin >> x;
+    }
+    void display() {
+        cout << "The value is " << x << endl;
+    }
+    Num(int px = 0) {
+        x = px;
+    }
+    Num operator- () {
+        Num neg;
+        neg.x = -x;
+        return neg;
+    }
+    
+    Num operator+ (Num sec) {
+        Num ans;
+        ans.x = x + sec.x;
+        return ans;
+    }
+};
+
+int main() {
+    Num a = 8, b = 2, c = 3;
+    b = -a;
+    c = a + b;
+    b.display();
+    c.display();
+}
